@@ -1,12 +1,12 @@
 import axios from "axios";
 
-var baseurl = "./"//port changed to 80
+var baseurl = ""//port changed to 80
 
 
 if (window.location.origin.includes("localhost")) {
-    baseurl = "./"
+    baseurl = ""
 } else {
-     baseurl = "./" //port changed to 80
+     baseurl = "" //port changed to 80
 }
 export const base_url = baseurl
 console.log("updated email stuff")
