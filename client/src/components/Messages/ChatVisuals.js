@@ -13,7 +13,7 @@ function MessageTest() {
   const [showChat, setShowChat] = useState(false);
 
 
-  const joinRoom = (email1,email2) => {
+  const joinRoom = (email1,email2) => { //join room function (Very Important)
     let room = email1+"/"+email2
     console.log(room)
     setRoom(room)

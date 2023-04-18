@@ -69,6 +69,7 @@ app.use('/post', postRoutes)
 app.use('/api/user', userRoutes)
 app.use('/profiles', profileRoutes)
 
+<<<<<<< HEAD
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(()  => {
       if (require.main === module) { server.listen(PORT); }
@@ -80,4 +81,29 @@ else{ module.exports = app; }
 
     })
     .catch((error) => console.log(error.message));
+=======
+//mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  //  .then(()  => server.listen(PORT, () => console.log(`Server Running on Port: ${PORT}`)))
+  //  .catch((error) => console.log(error.message));
+>>>>>>> d12f1d23564cb3582ae830bc92621b35bdecc7f8
     
+mongoose.connect(CONNECTION_URL, function(err, db) {
+    if (err) {
+        console.log('Unable to connect to the server. Please start the server. Error:', err);
+    } else {
+        console.log('Connected to Server successfully!');
+        if (require.main === module) {
+            server.listen(PORT, function() {
+                console.log('Express server listening on port ' + PORT);
+            });
+        }
+        //  
+        //
+        else{
+            console.log('Running Test...');
+            module.exports = server;
+        }
+
+       
+    }
+});
