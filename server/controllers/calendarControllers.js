@@ -37,7 +37,7 @@ export const getEvents = async (req, res) => { //sending email through gmail
 
     var config = {
       method: 'get',
-      url: 'https://www.googleapis.com/calendar/v3/calendars/benmoxon256%40gmail.com/events?timeMax=2023-'
+      url: 'https://www.googleapis.com/calendar/v3/calendars/test292955%40gmail.com/events?timeMax=2023-'
             +end_month
             +'-01T00%3A00%3A00.000Z&timeMin=2023-'
             +start_month

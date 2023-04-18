@@ -70,6 +70,14 @@ app.use('/api/user', userRoutes)
 app.use('/profiles', profileRoutes)
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(()  => server.listen(PORT, () => console.log(`Server Running on Port: ${PORT}`)))
+    .then(()  => {
+      if (require.main === module) { server.listen(PORT); }
+// Instead do export the app:
+else{ module.exports = app; }
+      
+     // server.listen(PORT, () => console.log(`Server Running on Port: ${PORT}`))
+
+
+    })
     .catch((error) => console.log(error.message));
     
